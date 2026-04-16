@@ -1,5 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import aboutVisionImage from '../assets/about-vision.avif'
+
+const heroReveal = {
+    initial: { opacity: 0, y: 28, filter: 'blur(12px)' },
+    whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
+    viewport: { once: true, amount: 0.35 },
+    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] }
+}
 
 const leftReveal = {
     initial: { opacity: 0, x: -70, y: 12, filter: 'blur(10px)' },
@@ -29,8 +37,6 @@ const imageRight = {
     transition: { duration: 1, ease: [0.22, 1, 0.36, 1] }
 }
 
-const aboutTopImage =
-    'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80'
 const aboutMiddleImage =
     'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80'
 const aboutBottomImage =
@@ -39,22 +45,22 @@ const aboutBottomImage =
 const About = () => {
     return (
         <section className="about-page">
-            <div className="about-block top">
-                <div className="about-shell">
-                    <div className="about-grid about-grid-top">
-                        <motion.div className="about-copy top-copy" {...leftReveal}>
-                            <h1 className="about-main-title">About IterDX</h1>
-                            <p className="about-paragraph">
-                                IterDX is a strategic digital consultancy and product implementation partner.
-                                We help organizations move from fragmented legacy operations to stable,
-                                high-performance digital environments built for speed, control, and growth.
-                            </p>
-                        </motion.div>
+            <div className="about-hero">
+                <div className="about-hero__shell">
+                    <motion.div className="about-hero__inner" {...heroReveal}>
+                        <div className="about-hero__line" />
+                        <div className="about-hero__content">
+                            <div className="about-hero__copy">
+                                <h1 className="about-hero__title">
+                                    We use machine learning to give utilities a real-time understanding of how the grid behaves under stress.
+                                </h1>
+                            </div>
 
-                        <motion.div className="about-image-box top" {...imageRight}>
-                            <img src={aboutTopImage} alt="IterDX strategy workshop" className="about-image" />
-                        </motion.div>
-                    </div>
+                            <div className="about-hero__visual" aria-hidden="true">
+                                <img src={aboutVisionImage} alt="" className="about-hero__visual-image" />
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
 
@@ -105,7 +111,6 @@ const About = () => {
             </div>
         </section>
     )
-
 }
 
 export default About

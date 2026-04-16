@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import logo from '../assets/logo.png'
+import wordmark from '../assets/iterdx-global-wordmark.png'
 
 const Navbar = () => {
     const location = useLocation()
@@ -35,9 +36,9 @@ const Navbar = () => {
     return (
         <nav className={`navbar-wrapper ${isMobileMenuOpen ? 'is-mobile-open' : ''}`}>
             <div className="logo-container">
-                <Link to="/" className="brand-link">
-                    <img src={logo} alt="IterDX Global" className="logo-img" />
-                    <span className="brand-text">ITERDX GLOBAL</span>
+                <Link to="/" className="brand-link" aria-label="IterDX Global home">
+                    <img src={logo} alt="IterDX Global logo" className="logo-img" />
+                    <img src={wordmark} alt="IterDX Global" className="brand-wordmark-img" />
                 </Link>
             </div>
 
