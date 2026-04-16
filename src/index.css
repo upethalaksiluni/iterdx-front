@@ -10,7 +10,7 @@
   --pill-item-width: 100px;
   --nav-desktop-height: 140px;
   --nav-tablet-height: 122px;
-  --nav-mobile-height: 128px;
+  --nav-mobile-height: 84px;
   --page-shell: min(1380px, calc(100% - 48px));
   --site-max-width: min(1380px, calc(100% - 48px));
   --site-bg: radial-gradient(circle at center, #ffffff 0%, #d9e2f0 44%, #a5b4cb 100%);
@@ -29,6 +29,11 @@ body,
   min-height: 100vh;
 }
 
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--site-bg);
   background-attachment: fixed;
@@ -36,6 +41,7 @@ body {
   color: var(--text-dark);
   min-height: 100vh;
   overflow-x: hidden;
+  line-height: 1.5;
 }
 
 a,
@@ -61,4 +67,22 @@ button {
 .page-shell {
   width: var(--page-shell);
   margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 13.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import HomeServicesCarousel from '../components/HomeServicesCarousel.jsx'
 import HomeAboutPreview from '../components/HomeAboutPreview.jsx'
+import ContactPreview from '../components/ContactPreview.jsx'
 
 const Home = () => {
     return (
@@ -37,6 +38,7 @@ const Home = () => {
 
             <HomeAboutPreview />
             <HomeServicesCarousel />
+            <ContactPreview />
         </>
     )
 }

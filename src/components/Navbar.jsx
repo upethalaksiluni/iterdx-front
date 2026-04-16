@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import logo from '../assets/logo.png'
 
 const Navbar = () => {
     const location = useLocation()
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     const tabs = [
         { name: 'Home', path: '/' },
@@ -16,8 +17,23 @@ const Navbar = () => {
 
     const activeIndex = tabs.findIndex((tab) => tab.path === location.pathname)
 
+    useEffect(() => {
+        setIsMobileMenuOpen(false)
+    }, [location.pathname])
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 768) {
+                setIsMobileMenuOpen(false)
+            }
+        }
+
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
     return (
-        <nav className="navbar-wrapper">
+        <nav className={`navbar-wrapper ${isMobileMenuOpen ? 'is-mobile-open' : ''}`}>
             <div className="logo-container">
                 <Link to="/" className="brand-link">
                     <img src={logo} alt="IterDX Global" className="logo-img" />
@@ -25,7 +41,19 @@ const Navbar = () => {
                 </Link>
             </div>
 
-            <div className="nav-pill-container">
+            <button
+                type="button"
+                className={`nav-toggle ${isMobileMenuOpen ? 'is-open' : ''}`}
+                aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                aria-expanded={isMobileMenuOpen}
+                onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            >
+                <span className="nav-toggle__line" />
+                <span className="nav-toggle__line" />
+                <span className="nav-toggle__line" />
+            </button>
+
+            <div className={`nav-pill-container ${isMobileMenuOpen ? 'is-open' : ''}`}>
                 <div className="nav-pill">
                     {activeIndex !== -1 && (
                         <motion.div
@@ -53,6 +81,19 @@ const Navbar = () => {
                     Inquiry
                 </Link>
             </div>
+
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        className="nav-mobile-backdrop"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                    />
+                )}
+            </AnimatePresence>
         </nav>
     )
 }

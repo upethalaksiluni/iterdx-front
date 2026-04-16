@@ -16,6 +16,9 @@ const visualReveal = {
     transition: { duration: 1, ease: [0.22, 1, 0.36, 1] }
 }
 
+const aboutPreviewImage =
+    'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80'
+
 function HomeAboutPreview() {
     return (
         <section className="home-about-preview">
@@ -51,12 +54,15 @@ function HomeAboutPreview() {
                 </motion.div>
 
                 <motion.div className="home-about-preview__visual" {...visualReveal}>
-                    <div className="home-about-preview__shape-wrap">
-                        <div className="home-about-preview__ring" />
-                        <div className="home-about-preview__ring home-about-preview__ring--second" />
-                        <div className="home-about-preview__heart">
-                            <span className="home-about-preview__heart-line home-about-preview__heart-line--one" />
-                            <span className="home-about-preview__heart-line home-about-preview__heart-line--two" />
+                    <div className="home-about-preview__image-wrap">
+                        <span className="home-about-preview__image-orbit home-about-preview__image-orbit--one" />
+                        <span className="home-about-preview__image-orbit home-about-preview__image-orbit--two" />
+                        <div className="home-about-preview__image-frame">
+                            <img
+                                src={aboutPreviewImage}
+                                alt="IterDX team collaboration"
+                                className="home-about-preview__image"
+                            />
                         </div>
                     </div>
                 </motion.div>
