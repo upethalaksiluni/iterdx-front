@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import aboutVisionImage from '../assets/about-vision.avif'
+import TeamCarousel from '../components/TeamCarousel'
 
 const heroReveal = {
     initial: { opacity: 0, y: 28, filter: 'blur(12px)' },
@@ -39,8 +40,9 @@ const imageRight = {
 
 const aboutMiddleImage =
     'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80'
+
 const aboutBottomImage =
-    'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80'
+    'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80'
 
 const About = () => {
     return (
@@ -51,8 +53,9 @@ const About = () => {
                         <div className="about-hero__line" />
                         <div className="about-hero__content">
                             <div className="about-hero__copy">
+                                <span className="about-hero__eyebrow">IDENTITY</span>
                                 <h1 className="about-hero__title">
-                                    We use machine learning to give utilities a real-time understanding of how the grid behaves under stress.
+                                    IterDX is a strategic consultancy and product engineering house. We serve as a professional bridge to the AI era, guiding organizations and individuals from legacy systems to stabilized, high-performance digital operations.
                                 </h1>
                             </div>
 
@@ -66,22 +69,20 @@ const About = () => {
 
             <div className="about-block middle">
                 <div className="about-shell">
-                    <div className="about-grid reverse">
-                        <motion.div className="about-image-box middle" {...imageLeft}>
-                            <img src={aboutMiddleImage} alt="IterDX consulting session" className="about-image" />
+                    <h2 className="about-heading">Why IterDX: Navigating the Shift</h2>
+
+                    <div className="about-grid about-grid--content-image">
+                        <motion.div className="about-copy wide" {...leftReveal}>
+                            <p className="about-paragraph">
+                                We work with businesses that know change is necessary but need a clear way forward. Our role is to simplify digital transformation into practical, structured action through automation, security, reporting, and system design.
+                            </p>
+                            <p className="about-paragraph">
+                                Instead of generic advice, we create implementation-ready frameworks that help teams reduce waste, improve decision-making, and operate with more certainty.
+                            </p>
                         </motion.div>
 
-                        <motion.div className="about-copy wide" {...rightReveal}>
-                            <h2 className="about-heading">Why IterDX: Navigating the Shift</h2>
-                            <p className="about-paragraph">
-                                We work with businesses that know change is necessary but need a clear way
-                                forward. Our role is to simplify digital transformation into practical,
-                                structured action through automation, security, reporting, and system design.
-                            </p>
-                            <p className="about-paragraph">
-                                Instead of generic advice, we create implementation-ready frameworks that help
-                                teams reduce waste, improve decision-making, and operate with more certainty.
-                            </p>
+                        <motion.div className="about-image-box middle" {...imageRight}>
+                            <img src={aboutMiddleImage} alt="IterDX consulting session" className="about-image" />
                         </motion.div>
                     </div>
                 </div>
@@ -89,26 +90,25 @@ const About = () => {
 
             <div className="about-block bottom">
                 <div className="about-shell">
-                    <div className="about-grid">
-                        <motion.div className="about-copy" {...leftReveal}>
-                            <h2 className="about-heading">Who We Are: Building the Future</h2>
-                            <p className="about-paragraph">
-                                We combine consultancy thinking with hands-on product execution. That means we
-                                do not stop at recommendations. We design, refine, and implement the systems
-                                that power better operations.
-                            </p>
-                            <p className="about-paragraph">
-                                From front-end experience to digital infrastructure, our work is shaped around
-                                long-term resilience, stronger business foundations, and scalable growth.
-                            </p>
+                    <div className="about-grid about-grid--image-content">
+                        <motion.div className="about-image-box bottom" {...imageLeft}>
+                            <img src={aboutBottomImage} alt="IterDX engineering collaboration" className="about-image" />
                         </motion.div>
 
-                        <motion.div className="about-image-box bottom" {...imageRight}>
-                            <img src={aboutBottomImage} alt="IterDX engineering collaboration" className="about-image" />
+                        <motion.div className="about-copy" {...rightReveal}>
+                            <h2 className="about-heading">Who We Are: Building the Future</h2>
+                            <p className="about-paragraph">
+                                We combine consultancy thinking with hands-on product execution. That means we do not stop at recommendations. We design, refine, and implement the systems that power better operations.
+                            </p>
+                            <p className="about-paragraph">
+                                From front-end experience to digital infrastructure, our work is shaped around long-term resilience, stronger business foundations, and scalable growth.
+                            </p>
                         </motion.div>
                     </div>
                 </div>
             </div>
+
+            <TeamCarousel />
         </section>
     )
 }

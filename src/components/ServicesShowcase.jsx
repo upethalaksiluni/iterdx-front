@@ -209,8 +209,8 @@ const ServicesShowcase = ({
                                     <div className="services-showcase__index">
                                         <span className="services-showcase__index-line" />
                                         <span className="services-showcase__index-text">
-                      {String(currentIndex + 1).padStart(2, '0')} / {String(servicesData.length).padStart(2, '0')}
-                    </span>
+                                            {String(currentIndex + 1).padStart(2, '0')} / {String(servicesData.length).padStart(2, '0')}
+                                        </span>
                                     </div>
 
                                     <h3 className="services-showcase__slide-title">{currentSlide.title}</h3>
@@ -281,14 +281,14 @@ const ServicesShowcase = ({
                                 aria-label={`Go to ${service.title}`}
                                 aria-pressed={index === currentIndex}
                             >
-                <span className="services-showcase__tab-progress">
-                  <span
-                      className="services-showcase__tab-progress-fill"
-                      style={{
-                          width: index === currentIndex ? `${progress}%` : '0%'
-                      }}
-                  />
-                </span>
+                                <span className="services-showcase__tab-progress">
+                                    <span
+                                        className="services-showcase__tab-progress-fill"
+                                        style={{
+                                            width: index === currentIndex ? `${progress}%` : '0%'
+                                        }}
+                                    />
+                                </span>
 
                                 <span className="services-showcase__tab-title">{service.title}</span>
                             </button>

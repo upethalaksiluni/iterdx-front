@@ -31,20 +31,17 @@ function HomeAboutPreview() {
                     </div>
 
                     <h2 className="home-about-preview__title">
-                        The Engine of
+                        The Bridge to
                         <br />
-                        Digital Resilience
+                        Stable AI-Led Operations
                     </h2>
 
                     <p className="home-about-preview__text">
-                        IterDX Global is a digital transformation partner focused on turning complex
-                        operational challenges into secure, scalable systems. We help ambitious teams
-                        replace friction with structure, speed, and measurable clarity.
+                        IterDX is a strategic consultancy and product engineering house. We serve as a professional bridge to the AI era, guiding organizations and individuals from legacy systems to stabilized, high-performance digital operations.
                     </p>
 
                     <p className="home-about-preview__text">
-                        From AI workflow design to platform delivery, we build the infrastructure that
-                        helps modern businesses move with confidence in a rapidly changing digital market.
+                        We combine advisory thinking with execution-ready delivery across automation, product systems, reporting, and digital infrastructure so transformation becomes practical, measurable, and sustainable.
                     </p>
 
                     <Link to="/about" className="home-about-preview__cta">

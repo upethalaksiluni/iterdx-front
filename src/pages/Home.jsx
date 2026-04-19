@@ -3,41 +3,47 @@ import { motion } from 'framer-motion'
 import HomeServicesCarousel from '../components/HomeServicesCarousel.jsx'
 import HomeAboutPreview from '../components/HomeAboutPreview.jsx'
 import ContactPreview from '../components/ContactPreview.jsx'
+import LaunchingSoon from '../components/LaunchingSoon.jsx'
 
 const Home = () => {
     return (
         <>
             <section id="home" className="hero-section">
-                <motion.p
-                    className="hero-kicker"
-                    initial={{ opacity: 0, filter: 'blur(10px)' }}
-                    animate={{ opacity: 1, filter: 'blur(0px)' }}
-                    transition={{ duration: 1.2 }}
-                >
-                    DIGITAL EXCELLENCE. REDEFINED.
-                </motion.p>
+                <div className="hero-section__inner">
+                    <motion.p
+                        className="hero-kicker"
+                        initial={{ opacity: 0, filter: 'blur(10px)' }}
+                        animate={{ opacity: 1, filter: 'blur(0px)' }}
+                        transition={{ duration: 1.2 }}
+                    >
+                        STRATEGIC CONSULTANCY. PRODUCT ENGINEERING.
+                    </motion.p>
 
-                <motion.h1
-                    className="hero-title"
-                    initial={{ opacity: 0, y: 30, filter: 'blur(15px)' }}
-                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                    transition={{ duration: 1.5, ease: 'easeOut' }}
-                >
-                    Senior React Architect & <br /> Web Implementation Partner
-                </motion.h1>
+                    <motion.h1
+                        className="hero-title"
+                        initial={{ opacity: 0, y: 30, filter: 'blur(15px)' }}
+                        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                        transition={{ duration: 1.5, ease: 'easeOut' }}
+                    >
+                        <span className="hero-title__line">The Professional Bridge</span>
+                        <span className="hero-title__line hero-title__line--and">to</span>
+                        <span className="hero-title__line">the AI Era</span>
+                    </motion.h1>
 
-                <motion.p
-                    className="hero-subtext"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.8, duration: 1 }}
-                >
-                    Bridging the gap between generic templates and high-standard brand execution with scalable React and modern front-end systems.
-                </motion.p>
+                    <motion.p
+                        className="hero-subtext"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.8, duration: 1 }}
+                    >
+                        IterDX is a strategic consultancy and product engineering house guiding organizations and individuals from legacy systems to stabilized, high-performance digital operations.
+                    </motion.p>
+                </div>
             </section>
 
             <HomeAboutPreview />
             <HomeServicesCarousel />
+            <LaunchingSoon />
             <ContactPreview />
         </>
     )

@@ -7,6 +7,7 @@ import wordmark from '../assets/iterdx-global-wordmark.png'
 const Navbar = () => {
     const location = useLocation()
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const [isMobile, setIsMobile] = useState(false)
 
     const tabs = [
         { name: 'Home', path: '/' },
@@ -24,14 +25,27 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth > 768) {
+            const mobile = window.innerWidth <= 768
+            setIsMobile(mobile)
+
+            if (!mobile) {
                 setIsMobileMenuOpen(false)
             }
         }
 
+        handleResize()
         window.addEventListener('resize', handleResize)
+
         return () => window.removeEventListener('resize', handleResize)
     }, [])
+
+    useEffect(() => {
+        document.body.style.overflow = isMobileMenuOpen ? 'hidden' : ''
+
+        return () => {
+            document.body.style.overflow = ''
+        }
+    }, [isMobileMenuOpen])
 
     return (
         <nav className={`navbar-wrapper ${isMobileMenuOpen ? 'is-mobile-open' : ''}`}>
@@ -60,7 +74,11 @@ const Navbar = () => {
                         <motion.div
                             className="active-pill-bg"
                             initial={false}
-                            animate={{ x: `calc(${activeIndex} * var(--pill-item-width))` }}
+                            animate={
+                                isMobile
+                                    ? { x: 0, y: `calc(${activeIndex} * 40px)` }
+                                    : { x: `calc(${activeIndex} * var(--pill-item-width))`, y: 0 }
+                            }
                             transition={{ type: 'spring', stiffness: 400, damping: 35 }}
                         />
                     )}
@@ -75,12 +93,6 @@ const Navbar = () => {
                         </Link>
                     ))}
                 </div>
-            </div>
-
-            <div className="inquiry-btn-container">
-                <Link className="inquiry-btn" to="/contact">
-                    Inquiry
-                </Link>
             </div>
 
             <AnimatePresence>

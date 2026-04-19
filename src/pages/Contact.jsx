@@ -45,9 +45,7 @@ const Contact = () => {
                         <span className="contact-hero__divider" />
 
                         <p className="contact-hero__description">
-                            Build stronger digital foundations with a team that understands execution,
-                            design quality, and scalable front-end delivery. From consultation to
-                            implementation, we help you move with clarity.
+                            Build stronger digital foundations with a team that understands execution, design quality, and scalable front-end delivery. From consultation to implementation, we help you move with clarity.
                         </p>
 
                         <button
@@ -65,15 +63,15 @@ const Contact = () => {
 
                         <div className="contact-hero__meta">
                             <div className="contact-hero__meta-item">
-                                <span className="contact-hero__meta-icon">◎</span>
+                                <span className="contact-hero__meta-icon">â—‰</span>
                                 <span>iterdxglobal.com</span>
                             </div>
                             <div className="contact-hero__meta-item">
-                                <span className="contact-hero__meta-icon">◔</span>
+                                <span className="contact-hero__meta-icon">â—”</span>
                                 <span>+94 70 000 0000</span>
                             </div>
                             <div className="contact-hero__meta-item">
-                                <span className="contact-hero__meta-icon">◉</span>
+                                <span className="contact-hero__meta-icon">â—Ž</span>
                                 <span>Colombo, Sri Lanka</span>
                             </div>
                         </div>
@@ -89,7 +87,7 @@ const Contact = () => {
                 <div id="contact-form-section" className="contact-section">
                     <motion.div className="contact-section__info" {...fadeUp}>
                         <div className="contact-section__info-block">
-                            <div className="contact-section__icon">☎</div>
+                            <div className="contact-section__icon">â˜Ž</div>
                             <div>
                                 <h3 className="contact-section__info-title">Call Us</h3>
                                 <p className="contact-section__info-text">+94 70 000 0000, +94 11 000 0000</p>
@@ -97,7 +95,7 @@ const Contact = () => {
                         </div>
 
                         <div className="contact-section__info-block">
-                            <div className="contact-section__icon">⌖</div>
+                            <div className="contact-section__icon">âŒ–</div>
                             <div>
                                 <h3 className="contact-section__info-title">Location</h3>
                                 <p className="contact-section__info-text">IterDX Global, Colombo, Sri Lanka</p>
@@ -105,7 +103,7 @@ const Contact = () => {
                         </div>
 
                         <div className="contact-section__info-block">
-                            <div className="contact-section__icon">◷</div>
+                            <div className="contact-section__icon">â—·</div>
                             <div>
                                 <h3 className="contact-section__info-title">Business Hours</h3>
                                 <p className="contact-section__info-text">Mon - Fri 9.00 am - 6.00 pm</p>

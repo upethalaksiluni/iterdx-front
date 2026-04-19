@@ -12,14 +12,19 @@
   --nav-tablet-height: 122px;
   --nav-mobile-height: 84px;
   --page-shell: min(1380px, calc(100% - 48px));
-  --site-max-width: min(1380px, calc(100% - 48px));
+  --site-max-width: 1380px;
   --site-bg: radial-gradient(circle at center, #ffffff 0%, #d9e2f0 44%, #a5b4cb 100%);
+  --section-space: 56px;
+  --section-space-tablet: 40px;
+  --section-space-mobile: 28px;
+  --section-space-small-mobile: 22px;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  min-width: 0;
 }
 
 html,
@@ -32,6 +37,7 @@ body,
 html {
   font-size: 15px;
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -40,7 +46,7 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   color: var(--text-dark);
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
   line-height: 1.5;
 }
 
@@ -64,8 +70,13 @@ button {
   font-family: inherit;
 }
 
+#root {
+  isolation: isolate;
+}
+
 .page-shell {
   width: var(--page-shell);
+  max-width: var(--site-max-width);
   margin: 0 auto;
 }
 

@@ -118,10 +118,10 @@ function ServiceDetails() {
 
                                         {isActive ? (
                                             <div className="service-details-progress">
-                        <span
-                            className="service-details-progress-bar"
-                            style={{ width: `${progress}%` }}
-                        />
+                                                <span
+                                                    className="service-details-progress-bar"
+                                                    style={{ width: `${progress}%` }}
+                                                />
                                             </div>
                                         ) : null}
                                     </div>
@@ -144,9 +144,9 @@ function ServiceDetails() {
                             />
                             <div className="service-details-image-overlay" />
                             <div className="service-details-media-content">
-                <span className="service-details-media-step">
-                  {service.steps[currentFeature].step}
-                </span>
+                                <span className="service-details-media-step">
+                                    {service.steps[currentFeature].step}
+                                </span>
                                 <h3 className="service-details-media-title">
                                     {service.steps[currentFeature].title}
                                 </h3>
