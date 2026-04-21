@@ -25,8 +25,7 @@ const Home = () => {
                         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                         transition={{ duration: 1.5, ease: 'easeOut' }}
                     >
-                        <span className="hero-title__line">The Professional Bridge</span>
-                        <span className="hero-title__line hero-title__line--and">to</span>
+                        <span className="hero-title__line">The Professional Bridge to</span>
                         <span className="hero-title__line">the AI Era</span>
                     </motion.h1>
 
