@@ -22,7 +22,7 @@
 
 .navbar-backdrop-box {
     position: absolute;
-    inset: 12px var(--side-gutter);
+    inset: 0px var(--side-gutter);
     border-radius: 28px;
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
