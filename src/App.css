@@ -20,6 +20,17 @@
     z-index: 2000;
 }
 
+.navbar-backdrop-box {
+    position: absolute;
+    inset: 12px var(--side-gutter);
+    border-radius: 28px;
+    /*background: rgba(255, 255, 255, 0.01);*/
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    pointer-events: none;
+    z-index: 0;
+}
+
 .logo-container {
     min-width: 0;
     position: relative;
@@ -2553,6 +2564,11 @@ section {
         overflow: visible;
     }
 
+    .navbar-backdrop-box {
+        inset: 8px 12px;
+        border-radius: 24px;
+    }
+
     .logo-container {
         grid-area: brand;
         min-width: 0;
@@ -3299,6 +3315,10 @@ section {
         padding-right: 10px;
     }
 
+    .navbar-backdrop-box {
+        inset: 8px 10px;
+    }
+
     .brand-link {
         gap: 7px;
     }
@@ -3582,6 +3602,11 @@ section {
     .navbar-wrapper {
         padding: 8px 8px;
         gap: 8px;
+    }
+
+    .navbar-backdrop-box {
+        inset: 6px 8px;
+        border-radius: 20px;
     }
 
     .brand-wordmark-img {
